@@ -15,3 +15,12 @@ calcularValorDescuento = function(monto, porcentajeDescuento) {
     return descuento;
 
 }
+
+calcularIva = function(monto, descuento) {
+
+    let iva;
+    iva = (monto - descuento) * 0.12;
+
+    return iva;
+
+}

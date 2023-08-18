@@ -25,24 +25,12 @@ calcularValorTotal = function() {
     valorDescuento = calcularValorDescuento(valorSubtotal, porcentajeDescuento);
     document.getElementById("lblDescuento").innerText = "$ " + valorDescuento;
 
-    /*
-        Caso de prueba: 
-            precioProducto: 5.4  cantidad: 10 descuento: 10
-            Descuento esperado: 5.4
-        Si el caso de prueba es exitoso, hacer un commit
-     */
-    //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
-    //   El IVA debe calcularse sobre el valor del subtotal menos el descuento
-    //9. Mostrar el resultado en el componente lblValorIVA    
-    /*
-            Caso de prueba: 
-                precioProducto: 5.4  cantidad: 10 descuento: 10
-					--valorSubtotal: 54
-					--descuento:5.4
-					--valorSubtotal - descuento: 48.6
-                IVA esperado: 5.832
-            Si el caso de prueba es exitoso, hacer un commit
-        */
+
+    valorIVA = calcularIva(valorSubtotal, valorDescuento);
+    document.getElementById("lblValorIVA").innerText = "$ " + valorIVA;
+
+
+
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
     //11. Mostrar el resultado en el componente lblTotal
     /*
