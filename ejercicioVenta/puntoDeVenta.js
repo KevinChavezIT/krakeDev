@@ -33,6 +33,10 @@ calcularValorTotal = function() {
     valorTotal = calcularTotal(valorSubtotal, valorDescuento, valorIVA);
     document.getElementById("lblTotal").innerText = "$ " + valorTotal;
 
+
+    document.getElementById("lblResumen").innerHTML = "Resumen de compra: " + "Valor a pagar por " + cantidad + " " + nombreProducto +
+        " con el " + porcentajeDescuento + "% de Descuento es de: USD " + valorTotal;
+
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
     /*
         Ejemplo: 
