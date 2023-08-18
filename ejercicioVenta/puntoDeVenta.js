@@ -22,6 +22,8 @@ calcularValorTotal = function() {
     document.getElementById("lblSubtotal").innerText = "$ " + valorSubtotal;
 
 
+    valorDescuento = calcularValorDescuento(valorSubtotal, porcentajeDescuento);
+    document.getElementById("lblDescuento").innerText = "$ " + valorDescuento;
 
     /*
         Caso de prueba: 
