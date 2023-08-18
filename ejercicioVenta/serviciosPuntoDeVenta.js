@@ -24,3 +24,12 @@ calcularIva = function(monto, descuento) {
     return iva;
 
 }
+
+calcularTotal = function(pagoSubtotal, descuento, iva) {
+
+    let total;
+    total = (pagoSubtotal - descuento) + iva;
+
+    return total;
+
+}
