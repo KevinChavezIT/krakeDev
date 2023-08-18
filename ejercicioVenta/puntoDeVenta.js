@@ -1,10 +1,10 @@
 calcularValorTotal = function() {
-    //variables para recuperar los valores de las cajas de texto
+
     let nombreProducto;
     let precioProducto;
     let cantidad;
     let porcentajeDescuento;
-    //variables para almacenar los retornos de las funciones
+
     let valorSubtotal;
     let valorDescuento;
     let valorIVA;
@@ -37,19 +37,17 @@ calcularValorTotal = function() {
     document.getElementById("lblResumen").innerHTML = "Resumen de compra: " + "Valor a pagar por " + cantidad + " " + nombreProducto +
         " con el " + porcentajeDescuento + "% de Descuento es de: USD " + valorTotal;
 
-    //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
-    /*
-        Ejemplo: 
-            Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
-        Si funciona, hacer un commit
-    */
-
 }
 limpiar = function() {
-        /*
-            Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
-            Dejar todos los textos de los montos con el valor 0.0
-            Si funciona, hacer un commit
-         */
-    }
-    /* SI TODO FUNCIONA, HACER UN PUSH */
+
+    document.getElementById("txtProducto").value = " ";
+    document.getElementById("txtPrecio").value = "0.0";
+    document.getElementById("txtCantidad").value = "0";
+    document.getElementById("txtPorcentajeDescuento").value = "0";
+    document.getElementById("lblSubtotal").innerText = "0.0";
+    document.getElementById("lblDescuento").innerText = "0.0";
+    document.getElementById("lblValorIVA").innerText = "0.0";
+    document.getElementById("lblTotal").innerText = "0.0";
+    document.getElementById("lblResumen").innerText = "Resumen de compra: ";
+
+}
