@@ -5,12 +5,10 @@ calcularPromedioNotas = function() {
     let notaTres;
     let promedio;
     let resultFormateado;
-    let imgResultado;
 
     notaUno = recuperarFlotante("txtNum1");
     notaDos = recuperarFlotante("txtNum2");
     notaTres = recuperarFlotante("txtNum3");
-
 
     promedio = calcularPromedio(notaUno, notaDos, notaTres);
     resultFormateado = promedio.toFixed(2);
