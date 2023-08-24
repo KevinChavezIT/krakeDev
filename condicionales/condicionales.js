@@ -211,7 +211,7 @@ otorgarPermiso = function(notaMate, notaFisica, notaGeometria) {
     notaFisica = parseFloat(notaFisica);
     notaGeometria = parseFloat(notaGeometria);
 
-    if (notaMate > 90 || notaFisica > 90 && notaGeometria > 80) {
+    if ((notaMate > 90 || notaFisica > 90) && notaGeometria > 80) {
 
         return true;
 
@@ -229,8 +229,7 @@ dejarSalir = function(notaMate, notaFisica, notaGeometria) {
     notaFisica = parseFloat(notaFisica);
     notaGeometria = parseFloat(notaGeometria);
 
-    if (notaMate > 90 && notaFisica > 90 || notaGeometria > 90) {
-
+    if ((notaMate > 90 && notaFisica > 90) || notaGeometria > 90) {
         return true;
 
     } else if (notaFisica > notaMate) {
