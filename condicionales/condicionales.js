@@ -203,8 +203,13 @@ darPermiso = function(notaMate, notaFisica, notaGeometria) {
     }
 }
 
+/*
+al mometo de colocar en una mis inttuccion solo va a ingresar a Or
+(solo va arealizar esta consulta notaMate > 90 || notaFisica > 90)
 
-
+lo puesdes realizar con un if anidado o de la siguente manera 
+if((fisica>noota||Matematicas>90) &&geometria)
+*/
 otorgarPermiso = function(notaMate, notaFisica, notaGeometria) {
 
     notaMate = parseFloat(notaMate);
@@ -222,7 +227,10 @@ otorgarPermiso = function(notaMate, notaFisica, notaGeometria) {
 }
 
 
-
+/*
+solo realiza ve la nota de geometria.
+realiza un if anidado ocomo el ejemplo anterior
+*/
 dejarSalir = function(notaMate, notaFisica, notaGeometria) {
 
     notaMate = parseFloat(notaMate);
