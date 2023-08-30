@@ -65,76 +65,76 @@ obtenerProvincia = function(placaVehiculo) {
     primerCaracter = placaVehiculo.charAt(0);
 
     if (primerCaracter === 'A') {
-        return "AZUAY ";
+        return "Azuay ";
 
     } else if (primerCaracter === 'B') {
-        return "BOLIVAR";
+        return "Bolivar";
 
     } else if (primerCaracter === 'U') {
-        return "CANIAR";
+        return "Caniar";
 
     } else if (primerCaracter === 'C') {
-        return "CARCHI";
+        return "Carchi";
 
     } else if (primerCaracter === 'X') {
-        return "COTOPAXI";
+        return "Cotopaxi";
 
     } else if (primerCaracter === 'H') {
-        return "CHIMBORAZO";
+        return "Chimborazo";
 
     } else if (primerCaracter === 'O') {
-        return "EL ORO";
+        return "El Oro";
 
     } else if (primerCaracter === 'E') {
-        return "ESMERALDAS";
+        return "Esmeraldas";
 
     } else if (primerCaracter === 'W') {
-        return "GALAPAGOS";
+        return "Galapagos";
 
     } else if (primerCaracter === 'G') {
-        return "GUAYAS";
+        return "Guayas";
 
     } else if (primerCaracter === 'I') {
-        return "IMBABURA";
+        return "Imbabura";
 
     } else if (primerCaracter === 'L') {
-        return "LOJA";
+        return "Loja";
 
     } else if (primerCaracter === 'R') {
-        return "LOS RIOS";
+        return "Los Ros";
 
     } else if (primerCaracter === 'M') {
-        return "MANABI";
+        return "Manabi";
 
     } else if (primerCaracter === 'V') {
-        return "MORONA SANTIAGO";
+        return "Morona Santiago";
 
     } else if (primerCaracter === 'N') {
-        return "NAPO";
+        return "Napo";
 
     } else if (primerCaracter === 'S') {
-        return "PASTAZA";
+        return "Pastaza";
 
     } else if (primerCaracter === 'P') {
-        return "PICHINCHA";
+        return "Pichincha";
 
     } else if (primerCaracter === 'K') {
-        return "SUCUMBIOS";
+        return "Sucumbios";
 
     } else if (primerCaracter === 'Q') {
-        return "ORELLANA";
+        return "Orellana";
 
     } else if (primerCaracter === 'T') {
-        return "TUNGURAHUA";
+        return "Tungurahua";
 
     } else if (primerCaracter === 'Z') {
-        return "ZAMORA CHINCHIPE";
+        return "Zamora Chinchipe";
 
     } else if (primerCaracter === 'Y') {
-        return "SANTA ELENA";
+        return "Santa Elena";
 
     } else if (primerCaracter === 'J') {
-        return "SANTO DOMINGO DE LOS TSACHILAS";
+        return "Santo Domingo de los Tsachilas";
 
     } else {
         return null;
@@ -154,7 +154,7 @@ obtenerTipoVehiculo = function(placa) {
         return "Vehiculo Gubernamental";
 
     } else if (segundoCaracter === 'X') {
-        return "Vehiculo de uso Oficial";
+        return "Vehiculo de uso oficial";
 
     } else if (segundoCaracter === 'S') {
         return "Vehiculo del Gobierno Provincial";
@@ -163,10 +163,31 @@ obtenerTipoVehiculo = function(placa) {
         return "Vehiculo Municipal";
 
     } else if (vehiculoPrivado.includes(segundoCaracter)) {
-        return "Vehiculo Particular(PRIVADO)";
+        return "Vehiculo Particular (privado)";
 
     } else {
         return null;
     }
+}
 
+obtenerDiaPicoYPlaca = function(placa) {
+
+    let ultimoCaracter = placa.length - 1;
+    let digito = placa.charAt(ultimoCaracter);
+
+    if (digito == 1 || digito == 2) {
+        return "Lunes";
+    }
+    if (digito == 3 || digito == 4) {
+        return "Martes";
+    }
+    if (digito == 5 || digito == 6) {
+        return "Miercoles";
+    }
+    if (digito == 7 || digito == 8) {
+        return "Juves";
+    }
+    if (digito == 9 || digito == 0) {
+        return "Viernes";
+    }
 }

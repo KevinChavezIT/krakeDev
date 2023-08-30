@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="placas.css">
 </head>
 
-
 <body>
 
     <h1 class="titulo"> Validacion de placa vehicular Ecuador </h1>
     <h2 class="placaEstilo">Ingrese la placa</h2>
+
     <input type="text" class="cajaTexto" id="txtPlaca" />
-    <input type="button" class="boton" value="VALIDAR" onclick="validarPlaca();" />
-    <h3 class="provincia" id="lblTipoVehiculo"></h3>
+
     <h3 class="provincia" id="lblProvincia"></h3>
+    <h3 class="provincia" id="lblTipoVehiculo"></h3>
+    <H3 class="provincia" id="lblPicoYPlaca"></H3>
     <h3 class="validacion" id="lblValidacion"></h3>
     <h3 class="error" id="lblErrores"></h3>
 
-
+    <input type="button" class="boton" value="VALIDAR" onclick="validarPlaca();" />
+    <input type="button" value="LIMPIAR" class="boton" onclick="limpiar();" />
 
 </body>
 
