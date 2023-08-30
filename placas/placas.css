@@ -1,0 +1,49 @@
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(125, 150, 208);
+}
+
+.cajaTexto {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+}
+
+.boton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-block-end: 10px;
+}
+
+.placaEstilo {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 55px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(174, 201, 232);
+    background-size: cover;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 16px;
+}
