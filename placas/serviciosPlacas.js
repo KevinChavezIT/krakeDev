@@ -68,10 +68,10 @@ obtenerProvincia = function(placaVehiculo) {
         return "AZUAY ";
 
     } else if (primerCaracter === 'B') {
-        return "BOLÍVAR";
+        return "BOLIVAR";
 
     } else if (primerCaracter === 'U') {
-        return "CAÑAR";
+        return "CANIAR";
 
     } else if (primerCaracter === 'C') {
         return "CARCHI";
@@ -89,7 +89,7 @@ obtenerProvincia = function(placaVehiculo) {
         return "ESMERALDAS";
 
     } else if (primerCaracter === 'W') {
-        return "GALÁPAGOS";
+        return "GALAPAGOS";
 
     } else if (primerCaracter === 'G') {
         return "GUAYAS";
@@ -101,10 +101,10 @@ obtenerProvincia = function(placaVehiculo) {
         return "LOJA";
 
     } else if (primerCaracter === 'R') {
-        return "LOS RÍOS";
+        return "LOS RIOS";
 
     } else if (primerCaracter === 'M') {
-        return "MANABÍ";
+        return "MANABI";
 
     } else if (primerCaracter === 'V') {
         return "MORONA SANTIAGO";
@@ -119,7 +119,7 @@ obtenerProvincia = function(placaVehiculo) {
         return "PICHINCHA";
 
     } else if (primerCaracter === 'K') {
-        return "SUCUMBÍOS";
+        return "SUCUMBIOS";
 
     } else if (primerCaracter === 'Q') {
         return "ORELLANA";
@@ -134,9 +134,39 @@ obtenerProvincia = function(placaVehiculo) {
         return "SANTA ELENA";
 
     } else if (primerCaracter === 'J') {
-        return "SANTO DOMINGO DE LOS TSÁCHILAS";
+        return "SANTO DOMINGO DE LOS TSACHILAS";
 
     } else {
         return null;
     }
+}
+
+
+obtenerTipoVehiculo = function(placa) {
+
+    segundoCaracter = placa.charAt(1);
+    vehiculoPrivado = "DBCFGHIJKLNOPQRTUVWY";
+
+    if (segundoCaracter === 'A' || segundoCaracter === 'Z') {
+        return "Vehiculo Comercial";
+
+    } else if (segundoCaracter === 'E') {
+        return "Vehiculo Gubernamental";
+
+    } else if (segundoCaracter === 'X') {
+        return "Vehiculo de uso Oficial";
+
+    } else if (segundoCaracter === 'S') {
+        return "Vehiculo del Gobierno Provincial";
+
+    } else if (segundoCaracter === 'M') {
+        return "Vehiculo Municipal";
+
+    } else if (vehiculoPrivado.includes(segundoCaracter)) {
+        return "Vehiculo Particular(PRIVADO)";
+
+    } else {
+        return null;
+    }
+
 }
