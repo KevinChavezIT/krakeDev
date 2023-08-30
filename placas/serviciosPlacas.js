@@ -17,7 +17,7 @@ validarEstructura = function(placa) {
     if (longitud == 7 || longitud == 8) {
 
         if (!esMayuscula(primerCaracter)) {
-            validacion = true;
+            validacion = false;
             mensajeError += "El primer caracter debe ser una MAYUSCULA<br> ";
         }
         if (!esMayuscula(segundoCaracter)) {
@@ -56,5 +56,87 @@ validarEstructura = function(placa) {
 
     } else {
         return mensajeError += "La longitud de la placa debe tener 7 u 8 CARACTERES <br> ";
+    }
+}
+
+
+obtenerProvincia = function(placaVehiculo) {
+
+    primerCaracter = placaVehiculo.charAt(0);
+
+    if (primerCaracter === 'A') {
+        return "AZUAY ";
+
+    } else if (primerCaracter === 'B') {
+        return "BOLÍVAR";
+
+    } else if (primerCaracter === 'U') {
+        return "CAÑAR";
+
+    } else if (primerCaracter === 'C') {
+        return "CARCHI";
+
+    } else if (primerCaracter === 'X') {
+        return "COTOPAXI";
+
+    } else if (primerCaracter === 'H') {
+        return "CHIMBORAZO";
+
+    } else if (primerCaracter === 'O') {
+        return "EL ORO";
+
+    } else if (primerCaracter === 'E') {
+        return "ESMERALDAS";
+
+    } else if (primerCaracter === 'W') {
+        return "GALÁPAGOS";
+
+    } else if (primerCaracter === 'G') {
+        return "GUAYAS";
+
+    } else if (primerCaracter === 'I') {
+        return "IMBABURA";
+
+    } else if (primerCaracter === 'L') {
+        return "LOJA";
+
+    } else if (primerCaracter === 'R') {
+        return "LOS RÍOS";
+
+    } else if (primerCaracter === 'M') {
+        return "MANABÍ";
+
+    } else if (primerCaracter === 'V') {
+        return "MORONA SANTIAGO";
+
+    } else if (primerCaracter === 'N') {
+        return "NAPO";
+
+    } else if (primerCaracter === 'S') {
+        return "PASTAZA";
+
+    } else if (primerCaracter === 'P') {
+        return "PICHINCHA";
+
+    } else if (primerCaracter === 'K') {
+        return "SUCUMBÍOS";
+
+    } else if (primerCaracter === 'Q') {
+        return "ORELLANA";
+
+    } else if (primerCaracter === 'T') {
+        return "TUNGURAHUA";
+
+    } else if (primerCaracter === 'Z') {
+        return "ZAMORA CHINCHIPE";
+
+    } else if (primerCaracter === 'Y') {
+        return "SANTA ELENA";
+
+    } else if (primerCaracter === 'J') {
+        return "SANTO DOMINGO DE LOS TSÁCHILAS";
+
+    } else {
+        return null;
     }
 }

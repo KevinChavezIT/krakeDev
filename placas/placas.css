@@ -45,5 +45,23 @@ body {
 .error {
     color: red;
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.validacion {
+    color: #4CAF50;
+    font-style: italic;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.provincia {
+    color: yellow;
+    font-style: italic;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 0px;
 }
