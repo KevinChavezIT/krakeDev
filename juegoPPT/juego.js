@@ -17,7 +17,7 @@ jugar = function(seleccionado) {
         mostrarTexto("lblResultado", "EMPATE");
     } else if (ganador === 1) {
         puntosUsuario++;
-        mostrarTexto("lblResultado", "GANASTE PARTIDA");
+        mostrarTexto("lblResultado", "GANASTE RONDA");
         mostrarTexto("lblUsuario", "Usuario: " + puntosUsuario);
         if (puntosUsuario === 5) {
             mostrarTexto("lblPartida", "HAS GANADO EL JUEGO");
@@ -25,7 +25,7 @@ jugar = function(seleccionado) {
 
     } else if (ganador === 2) {
         puntosPC++;
-        mostrarTexto("lblResultado", "PERDISTELA LA PARTIDA");
+        mostrarTexto("lblResultado", "PERDISTE RONDA");
         mostrarTexto("lblPC", "Computador: " + puntosPC);
         if (puntosPC === 5) {
             mostrarTexto("lblPartida", "HAS PERDIDO EL JUEGO");
