@@ -30,18 +30,14 @@ mostrarAhorcado = function() {
 
 ingresarLetra = function() {
     let letraIngresada = recuperarTexto("txtLetra");
+    let letraValida = validar(letraIngresada);
 
     if (esMayuscula(letraIngresada)) {
-        let letraValida = validar(letraIngresada);
-        if (letraValida) {
-            coincidencias++;
 
-            if (coincidencias === 5) {
-                mostrarImagen("ahorcadoImagen", "./imagenes/ganador.gif");
-            }
+        if (coincidencias === 5) {
+            mostrarImagen("ahorcadoImagen", "./imagenes/ganador.gif");
 
-        }
-        if (!letraValida) {
+        } else {
             intentos++;
             if (intentos === 10) {
 
@@ -65,17 +61,17 @@ validar = function(letra) {
 
             letrasEncontradas++;
             mostrarLetra(letra, m);
-            return true;
+            coincidencias++;
+
         }
     }
 
     if (letrasEncontradas === 0) {
-        errores++;
-        mostrarAhorcado(errores);
+
         alert("La letra '" + letra + "' no es parte de la palabra.");
-
+        errores++;
+        mostrarAhorcado();
     }
-
 }
 
 mostrarLetra = function(letra, posicion) {
