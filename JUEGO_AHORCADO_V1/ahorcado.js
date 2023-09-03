@@ -48,8 +48,6 @@ ingresarLetra = function() {
     }
 }
 
-
-
 validar = function(letra) {
 
     let letrasEncontradas = 0;
@@ -97,6 +95,7 @@ guardarPalabra = function() {
         if (allMayusculas) {
             palabraSecreta = palabra;
             alert(" LISTO");
+            mostrarTextoEnCaja("txtSecreta", "????? ");
 
         } else {
             alert(" SOLO LETRAS MAYUSCULAS");
