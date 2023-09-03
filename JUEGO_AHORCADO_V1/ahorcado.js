@@ -1,17 +1,33 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
+let intentos = 0;
 let palabraSecreta;
+let coincidencias = 0;
+let errores = 0;
 
 ingresarLetra = function() {
     let letraIngresada = recuperarTexto("txtLetra");
 
     if (esMayuscula(letraIngresada)) {
+        let letraValida = validar(letraIngresada);
+        if (letraValida) {
+            coincidencias++;
 
-        validar(letraIngresada);
+            if (coincidencias === 5) {
+                alert("HAS GANADO");
+            }
 
+        } else {
+            intentos++;
+            if (intentos === 10) {
+
+                alert("HAS PERDIDO");
+            }
+        }
     } else {
-        alert("SOLO SE ACEPTAN MAYÚSCULAS");
+        alert("SOLO SE ACEPTAN MAYUSCULAS");
     }
 }
+
 
 validar = function(letra) {
 
@@ -23,8 +39,13 @@ validar = function(letra) {
 
             letrasEncontradas++;
             mostrarLetra(letra, m);
+            return true;
         }
     }
+
+    errores++;
+    alert("La letra '" + letra + "' no es parte de la palabra.");
+
 }
 
 mostrarLetra = function(letra, posicion) {
