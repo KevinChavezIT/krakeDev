@@ -30,7 +30,7 @@ mostrarAhorcado = function() {
 
 ingresarLetra = function() {
     let letraIngresada = recuperarTexto("txtLetra");
-    let letraValida = validar(letraIngresada);
+    validar(letraIngresada);
 
     if (esMayuscula(letraIngresada)) {
 
@@ -38,7 +38,6 @@ ingresarLetra = function() {
             mostrarImagen("ahorcadoImagen", "./imagenes/ganador.gif");
 
         } else {
-            intentos++;
             if (intentos === 10) {
 
                 mostrarImagen("ahorcadoImagen", "./imagenes/gameOver.gif");
@@ -71,6 +70,7 @@ validar = function(letra) {
         alert("La letra '" + letra + "' no es parte de la palabra.");
         errores++;
         mostrarAhorcado();
+        intentos++;
     }
 }
 
