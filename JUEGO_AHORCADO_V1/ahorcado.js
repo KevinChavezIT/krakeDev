@@ -4,6 +4,30 @@ let palabraSecreta;
 let coincidencias = 0;
 let errores = 0;
 
+
+mostrarAhorcado = function() {
+
+    if (errores === 1) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_02.png");
+    } else if (errores === 2) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_03.png");
+    } else if (errores === 3) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_04.png");
+    } else if (errores === 4) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_05.png");
+    } else if (errores === 5) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_06.png");
+    } else if (errores === 6) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_07.png");
+    } else if (errores === 7) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_08.png");
+    } else if (errores === 8) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_09.png");
+    } else if (errores === 9) {
+        mostrarImagen("ahorcadoImagen", "./imagenes/Ahorcado_10.png");
+    }
+}
+
 ingresarLetra = function() {
     let letraIngresada = recuperarTexto("txtLetra");
 
@@ -13,20 +37,22 @@ ingresarLetra = function() {
             coincidencias++;
 
             if (coincidencias === 5) {
-                alert("HAS GANADO");
+                mostrarImagen("ahorcadoImagen", "./imagenes/ganador.gif");
             }
 
-        } else {
+        }
+        if (!letraValida) {
             intentos++;
             if (intentos === 10) {
 
-                alert("HAS PERDIDO");
+                mostrarImagen("ahorcadoImagen", "./imagenes/gameOver.gif");
             }
         }
     } else {
         alert("SOLO SE ACEPTAN MAYUSCULAS");
     }
 }
+
 
 
 validar = function(letra) {
@@ -43,8 +69,12 @@ validar = function(letra) {
         }
     }
 
-    errores++;
-    alert("La letra '" + letra + "' no es parte de la palabra.");
+    if (letrasEncontradas === 0) {
+        errores++;
+        mostrarAhorcado(errores);
+        alert("La letra '" + letra + "' no es parte de la palabra.");
+
+    }
 
 }
 
