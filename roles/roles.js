@@ -15,6 +15,7 @@ mostrarEmpleados = function() {
         "<th>SUELDO </th>" +
         "</tr>";
 
+
     let elementEmpleados;
 
     for (let e = 0; e < empleados.length; e++) {
