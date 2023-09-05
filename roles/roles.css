@@ -140,7 +140,7 @@ td {
 }
 
 .estiloBoton:disabled {
-    background-color: gray;
+    background-color: rgb(168, 163, 163);
     color: #232623;
     border: 1px solid;
     border-color: #232623;
