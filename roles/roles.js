@@ -6,6 +6,17 @@ let empleados = [
     { cedula: "1758300089", nombre: "Kevin", apellido: "Chavez", sueldo: 1000.0 }
 ]
 
+limpiar = function() {
+
+    mostrarTextoEnCaja("txtCedula", "")
+    mostrarTextoEnCaja("txtNombre", "")
+    mostrarTextoEnCaja("txtApellido", "")
+    mostrarTextoEnCaja("txtSueldo", "")
+    esNuevo = false;
+    deshabilitar();
+
+}
+
 ejecutarBusqueda = function() {
 
     let valorCedula = recuperarTexto("txtBusquedaCedula");
