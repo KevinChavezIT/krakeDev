@@ -60,11 +60,7 @@ guardar = function() {
 
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
                 mostrarEmpleados();
-                deshabilitarComponente("txtCedula");
-                deshabilitarComponente("txtNombre");
-                deshabilitarComponente("txtApellido");
-                deshabilitarComponente("txtSueldo");
-                deshabilitarComponente("btnGuardar");
+                deshabilitar();
 
             } else {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA: " + empleado.cedula);
@@ -72,7 +68,6 @@ guardar = function() {
         }
     }
 }
-
 
 agregarEmpleado = function(empleado) {
 
@@ -82,7 +77,6 @@ agregarEmpleado = function(empleado) {
 
     if (resultado === null) {
         empleados.push(empleado);
-        // mostrarEmpleados();
         return true;
 
     } else {
@@ -111,9 +105,13 @@ ejecutarNuevo = function() {
 
     esNuevo = true;
     habilitarComponente("txtCedula");
+    mostrarTextoEnCaja("txtCedula", "")
     habilitarComponente("txtNombre");
+    mostrarTextoEnCaja("txtNombre", "")
     habilitarComponente("txtApellido");
+    mostrarTextoEnCaja("txtApellido", "")
     habilitarComponente("txtSueldo");
+    mostrarTextoEnCaja("txtSueldo", "")
     habilitarComponente("btnGuardar");
 }
 
@@ -152,12 +150,7 @@ mostrarOpcionEmpleado = function() {
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
-
+    deshabilitar();
 }
 mostrarOpcionRol = function() {
 
@@ -172,4 +165,13 @@ mostrarOpcionResumen = function() {
     ocultarComponente("divRol");
     mostrarComponente("divResumen");
 
+}
+
+deshabilitar = function() {
+
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
