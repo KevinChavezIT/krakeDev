@@ -6,6 +6,28 @@ let empleados = [
     { cedula: "1758300089", nombre: "Kevin", apellido: "Chavez", sueldo: 1000.0 }
 ]
 
+ejecutarBusqueda = function() {
+
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+
+    let empleadoBuscado = buscarEmpleado(valorCedula);
+
+    if (empleadoBuscado === null) {
+        alert("NO EXISTE EMPLEADO");
+
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleadoBuscado.cedula);
+        deshabilitarComponente("txtCedula");
+        mostrarTextoEnCaja("txtNombre", empleadoBuscado.nombre);
+        habilitarComponente("txtNombre");
+        mostrarTextoEnCaja("txtApellido", empleadoBuscado.apellido);
+        habilitarComponente("txtApellido");
+        mostrarTextoEnCaja("txtSueldo", empleadoBuscado.sueldo);
+        habilitarComponente("txtSueldo");
+        habilitarComponente("btnGuardar");
+    }
+}
+
 guardar = function() {
 
     let valorCedula = recuperarTexto("txtCedula");
@@ -61,10 +83,24 @@ guardar = function() {
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
                 mostrarEmpleados();
                 deshabilitar();
-
+                esNuevo = false;
             } else {
-                alert("YA EXISTE UN EMPLEADO CON LA CEDULA: " + empleado.cedula);
+                let empleadoModificar = buscarEmpleado(valorCedula);
+
+                if (empleadoModificar != null) {
+                    empleadoModificar.nombre = valorNombre;
+                    empleadoModificar.apellido = valorApellido;
+                    empleadoModificar.sueldo = valorSueldo;
+
+                    alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+                    mostrarEmpleados();
+                    deshabilitar();
+
+                }
             }
+
+        } else {
+            alert("YA EXISTE UN EMPLEADO CON LA CEDULA: " + empleado.cedula);
         }
     }
 }
@@ -113,6 +149,7 @@ ejecutarNuevo = function() {
     habilitarComponente("txtSueldo");
     mostrarTextoEnCaja("txtSueldo", "")
     habilitarComponente("btnGuardar");
+    deshabilitarComponente("txtBusquedaCedula", "");
 }
 
 mostrarEmpleados = function() {
