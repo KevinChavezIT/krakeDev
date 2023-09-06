@@ -6,6 +6,61 @@ let empleados = [
     { cedula: "1758300089", nombre: "Kevin", apellido: "Chavez", sueldo: 1000.0 }
 ]
 
+calcularRol = function() {
+
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+
+    if (isNaN(descuento) || descuento < 0 || descuento > sueldo) {
+        mostrarTexto("lblErrorDescuentos", "Solo se aceptan numeros entre 0 - " + sueldo);
+
+    } else {
+        let aporte = calcularAporteEmpleado(sueldo);
+        mostrarTexto("infoIESS", aporte);
+
+        let total = calcularValorApagar(sueldo, aporte, descuento);
+        mostrarTexto("infoPago", total);
+
+    }
+
+
+}
+
+calcularValorApagar = function(sueldo, aporteIEES, descuento) {
+
+    let valorApagar;
+
+    valorApagar = (sueldo - aporteIEES) - descuento;
+
+    return valorApagar;
+}
+
+calcularAporteEmpleado = function(sueldo) {
+
+    let aporteEmpleado;
+
+    aporteEmpleado = 9.45 * sueldo / 100;
+
+    return aporteEmpleado;
+}
+
+buscarPorRol = function() {
+
+    let valorCedula = recuperarTexto("txtBusquedaRol");
+
+    let empleadoBuscado = buscarEmpleado(valorCedula);
+
+    if (empleadoBuscado === null) {
+        alert("NO EXISTE EMPLEADOOO");
+
+    } else {
+        mostrarTexto("infoCedula", empleadoBuscado.cedula);
+        mostrarTexto("infoNombre", empleadoBuscado.nombre + " " + empleadoBuscado.apellido);
+
+        mostrarTexto("infoSueldo", empleadoBuscado.sueldo);
+    }
+}
+
 limpiar = function() {
 
     mostrarTextoEnCaja("txtCedula", "")
