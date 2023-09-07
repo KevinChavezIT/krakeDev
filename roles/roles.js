@@ -4,7 +4,71 @@ let empleados = [
     { cedula: "1714616123", nombre: "John", apellido: "Cena", sueldo: 500.0 },
     { cedula: "0914632123", nombre: "Luisa", apellido: "Gonzalez", sueldo: 900.0 },
     { cedula: "1758300089", nombre: "Kevin", apellido: "Chavez", sueldo: 1000.0 }
-]
+];
+
+let roles = [];
+
+guardarRol = function() {
+
+    let infPago = recuperarFloatDiv("infoPago");
+    let infIess = recuperarFloatDiv("infoIESS");
+    let infNombre = recuperarTextoDiv("infoNombre");
+    let infCedula = recuperarTextoDiv("infoCedula");
+    let infSueldo = recuperarFloatDiv("infoSueldo");
+
+    let result = calcularAporteEmpleador(infSueldo);
+
+    let rol = {};
+    rol.cedula = infCedula;
+    rol.nombre = infNombre;
+    rol.sueldo = infSueldo;
+    rol.valorApagar = infPago;
+    rol.aporteEmpleado = infIess;
+    rol.aporteEmpleador = result;
+
+    agregarRol(rol);
+    alert("LISTO");
+    deshabilitarComponente("guardarRol");
+
+}
+
+calcularAporteEmpleador = function(sueldo) {
+
+    let aporteEmpleador;
+
+    aporteEmpleador = 11.15 * sueldo / 100;
+
+    return aporteEmpleador;
+}
+
+agregarRol = function(rol) {
+
+    let resultado;
+    resultado = buscarRol(rol.cedula);
+
+    if (resultado === null) {
+        roles.push(rol);
+        alert("ROL AGREGADO")
+
+    } else {
+        alert("ya exite un rol con la cedula: " + rol.cedula);
+    }
+}
+
+buscarRol = function(cedula) {
+
+    let rolEncontrado = null;
+    for (let a = 0; a < roles.length; a++) {
+
+        let elementoRol = roles[a];
+        if (elementoRol.cedula === cedula) {
+
+            rolEncontrado = elementoRol;
+            break;
+        }
+    }
+    return rolEncontrado;
+}
 
 calcularRol = function() {
 
@@ -20,10 +84,8 @@ calcularRol = function() {
 
         let total = calcularValorApagar(sueldo, aporte, descuento);
         mostrarTexto("infoPago", total);
-
+        habilitarComponente("guardarRol");
     }
-
-
 }
 
 calcularValorApagar = function(sueldo, aporteIEES, descuento) {
@@ -260,7 +322,7 @@ mostrarOpcionRol = function() {
     ocultarComponente("divEmpleado");
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
-
+    deshabilitarComponente("guardarRol");
 }
 mostrarOpcionResumen = function() {
 
