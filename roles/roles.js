@@ -10,9 +10,9 @@ let roles = [];
 
 mostrarTotales = function() {
 
-    let totalEmpleado = 0;
-    let totalEmpleador = 0;
-    let totalAPagar = 0;
+    let totalEmpleado = 0.0;
+    let totalEmpleador = 0.0;
+    let totalAPagar = 0.0;
 
     for (let a = 0; a < roles.length; a++) {
 
@@ -23,6 +23,9 @@ mostrarTotales = function() {
     mostrarTexto("infoAporteEmpleado", totalEmpleado);
     mostrarTexto("infoAporteEmpresa", totalEmpleador);
     mostrarTexto("infoTotalPago", totalAPagar);
+
+    let totalNomina = totalEmpleado + totalEmpleador + totalAPagar;
+    mostrarTexto("infoNominaTotal", totalNomina);
 }
 
 mostrarRoles = function() {
@@ -365,12 +368,12 @@ mostrarOpcionEmpleado = function() {
 }
 mostrarOpcionRol = function() {
 
-    mostrarRoles();
-    mostrarTotales();
     ocultarComponente("divEmpleado");
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
     deshabilitarComponente("guardarRol");
+    mostrarRoles();
+    mostrarTotales();
 }
 mostrarOpcionResumen = function() {
 
