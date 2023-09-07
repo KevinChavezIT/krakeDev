@@ -8,6 +8,52 @@ let empleados = [
 
 let roles = [];
 
+mostrarTotales = function() {
+
+    let totalEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalAPagar = 0;
+
+    for (let a = 0; a < roles.length; a++) {
+
+        totalEmpleado += roles[a].aporteEmpleado;
+        totalEmpleador += roles[a].aporteEmpleador;
+        totalAPagar += roles[a].valorApagar + totalEmpleado + totalEmpleador;
+    }
+    mostrarTexto("infoAporteEmpleado", totalEmpleado);
+    mostrarTexto("infoAporteEmpresa", totalEmpleador);
+    mostrarTexto("infoTotalPago", totalAPagar);
+}
+
+mostrarRoles = function() {
+
+    let cmpTablaRes = document.getElementById("tablaResumen");
+
+    let contenidoTablaRes = "<table> <tr> " +
+        "<th>CEDULA </th>" +
+        "<th>NOMBRE </th>" +
+        "<th>VALOR A PAGAR </th>" +
+        "<th>APORTE EMPLEADO </th>" +
+        "<th>APORTE EMPLEADOR </th>" +
+        "</tr>";
+
+    let elementRoles;
+
+    for (let e = 0; e < roles.length; e++) {
+
+        elementRoles = roles[e];
+        contenidoTablaRes +=
+            "<tr> <td> " + elementRoles.cedula + " </td>" +
+            "<td> " + elementRoles.nombre + " </td>" +
+            "<td> " + elementRoles.valorApagar + " </td>" +
+            "<td> " + elementRoles.aporteEmpleado + " </td>" +
+            "<td> " + elementRoles.aporteEmpleador + " </td>" +
+            "  </tr>"
+    }
+    contenidoTablaRes += "</table>"
+    cmpTablaRes.innerHTML = contenidoTablaRes;
+}
+
 guardarRol = function() {
 
     let infPago = recuperarFloatDiv("infoPago");
@@ -319,6 +365,8 @@ mostrarOpcionEmpleado = function() {
 }
 mostrarOpcionRol = function() {
 
+    mostrarRoles();
+    mostrarTotales();
     ocultarComponente("divEmpleado");
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
