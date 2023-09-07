@@ -372,15 +372,14 @@ mostrarOpcionRol = function() {
     mostrarComponente("divRol");
     ocultarComponente("divResumen");
     deshabilitarComponente("guardarRol");
-    mostrarRoles();
-    mostrarTotales();
 }
 mostrarOpcionResumen = function() {
 
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
     mostrarComponente("divResumen");
-
+    mostrarRoles();
+    mostrarTotales();
 }
 
 deshabilitar = function() {
